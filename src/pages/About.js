@@ -20,17 +20,11 @@ const About = () => {
 
   // Work experience data
   const experiences = [
+    
     {
-      company: 'Freelance Developer',
-      role: 'Full Stack Developer',
-      period: '2023 - Present',
-      description: 'Developing responsive web applications using React.js, Node.js, and modern web technologies. Created 15+ projects including e-commerce platforms, portfolio websites, and business applications.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Express']
-    },
-    {
-      company: 'Personal Projects',
-      role: 'Frontend Developer',
-      period: '2022 - 2023',
+      company: 'Kalpvraksha',
+      role: 'Freelance Android Developer',
+      period: 'May 2025 - Present',
       description: 'Built various personal projects to master web development fundamentals. Focused on creating responsive, user-friendly interfaces with modern design principles.',
       technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap']
     }
@@ -61,21 +55,11 @@ const About = () => {
           </div>
           
           <div className="about-text">
-            <h3>About Me</h3>
             <p className="about-intro">
-              Hello! I'm Dhruv, a passionate Full Stack Developer from Indore, India. I specialize in creating modern, 
-              responsive web applications that combine beautiful design with robust functionality.
-            </p>
-            
-            <p>
-              My journey in web development started with a curiosity about how websites work, and it has evolved 
-              into a passion for creating digital solutions that make a difference. I enjoy working with both 
-              frontend and backend technologies to build complete web applications.
-            </p>
-
-            <p>
-              When I'm not coding, I enjoy exploring new technologies, contributing to open-source projects, 
-              and staying updated with the latest trends in web development.
+              
+              Whether it's building <span className="highlight">AI-powered</span> solutions, creating <span className="highlight">machine learning models</span>, or integrating these cutting-edge technologies into scalable applications, I'm here to bring the future to life.
+              <br />
+              {/* Let's dive into the world of smart, data-driven tech together! */}
             </p>
             
             <div className="about-buttons">

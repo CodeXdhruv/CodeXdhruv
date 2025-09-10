@@ -25,6 +25,9 @@
 
 .about-text {
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .about-text h3 {
@@ -42,6 +45,33 @@
   position: relative;
   padding-left: 20px;
   border-left: 4px solid var(--primary-color);
+}
+
+.intro-greeting {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.name-highlight {
+  font-weight: 800;
+  color: var(--primary-color);
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.highlight {
+  font-weight: 600;
+  color: var(--primary-color);
+  background: rgba(46, 204, 113, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.location-info {
+  font-weight: 600;
+  color: var(--primary-color);
 }
 
 .about-text p {
@@ -69,7 +99,9 @@
 .about-buttons {
   display: flex;
   gap: 15px;
-  margin-top: 30px;
+  margin-top: 25px;
+  flex-direction: row;
+  align-items: flex-start;
 }
 
 .resume-btn, .contact-btn {
@@ -367,11 +399,12 @@
 @media screen and (max-width: 992px) {
   .about-content {
     grid-template-columns: 1fr;
+    gap: 30px;
   }
   
   .about-image {
     order: -1;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     margin-top: 20px;
     height: 280px;
   }
@@ -480,6 +513,11 @@
   
   .section-title {
     font-size: 2rem;
+  }
+  
+  .about-intro {
+    font-size: 1.1rem;
+    padding-left: 15px;
   }
   
   .about-buttons {

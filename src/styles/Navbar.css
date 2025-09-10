@@ -93,6 +93,17 @@
   align-items: center;
 }
 
+/* Ensure nav-links are visible on desktop */
+@media screen and (min-width: 769px) {
+  .nav-links {
+    display: flex !important;
+  }
+  
+  .mobile-controls {
+    display: none;
+  }
+}
+
 .nav-links li {
   margin: 0 15px;
   position: relative;
@@ -168,15 +179,42 @@
   z-index: 1002;
   position: absolute;
   right: 20px;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+/* Mobile controls container */
+.mobile-controls {
+  display: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+  gap: 15px;
+  z-index: 1002;
+}
+
+.mobile-controls .mobile-menu-btn {
+  position: relative;
+  right: auto;
+  transform: none;
+  padding: 10px;
+}
+
+.mobile-controls .theme-toggle-item {
+  margin: 0;
+  display: flex;
+  align-items: center;
 }
 
 .mobile-menu-btn span {
   display: block;
   width: 25px;
-  height: 2px;
-  margin: 5px;
+  height: 3px;
+  margin: 4px 0;
   background: var(--text-color);
-  transition: var(--transition);
+  transition: all 0.3s ease;
+  border-radius: 2px;
 }
 
 .theme-toggle-item {
@@ -189,36 +227,50 @@
 @media screen and (max-width: 768px) {
   .navbar {
     padding: 0 20px;
+    justify-content: center;
+    position: relative;
   }
 
   .logo {
     font-size: 1.6rem;
     left: 20px;
+    z-index: 1001;
+    position: absolute;
+  }
+
+  .mobile-controls {
+    display: flex;
   }
 
   .mobile-menu-btn {
     display: block;
   }
 
+  /* Hide desktop nav links in mobile */
   .nav-links {
-    position: fixed;
-    top: 70px;
-    right: -100%;
-    width: 70%;
-    height: calc(100vh - 70px);
-    background: rgba(0, 0, 0, 0.9);
-    backdrop-filter: blur(10px);
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 50px;
-    transition: all 0.5s ease;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    display: none;
   }
 
-  .navbar.scrolled .nav-links {
-    top: 60px;
-    height: calc(100vh - 60px);
+  /* Show mobile menu when active */
+  .nav-links.active {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(20, 20, 30, 0.95);
+    backdrop-filter: blur(15px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    transition: all 0.4s ease;
+    z-index: 999;
+  }
+
+  .nav-links li {
+    z-index: 999;
   }
 
   .nav-links.active {
@@ -226,18 +278,65 @@
   }
 
   .nav-links li {
-    margin: 20px 0;
+    margin: 0;
+    width: 80%;
+    max-width: 300px;
+  }
+
+  /* Hide theme toggle from mobile menu */
+  .nav-links li:last-child {
+    display: none;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 15px 25px;
+    border-radius: 12px;
+    display: block;
+    text-align: center;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(46, 204, 113, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .nav-links a.active {
+    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+    color: white;
+    border-color: #8b5cf6;
+    font-weight: 600;
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+  }
+
+  .nav-links a.active::before {
+    display: none;
+  }
+
+  .theme-toggle-item {
+    margin: 20px 0 0 0;
+    width: auto;
   }
   
   .mobile-menu-btn.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(6px, 6px);
   }
   
   .mobile-menu-btn.active span:nth-child(2) {
     opacity: 0;
+    transform: translateX(20px);
   }
   
   .mobile-menu-btn.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  .mobile-menu-btn.active {
+    background: rgba(255, 255, 255, 0.1);
   }
 }

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import '../styles/Home.css';
 import '../styles/ThemeHelpers.css';
 import '../styles/Animations.css';
-import Particles from '../components/Particles';
 import { useTheme } from '../contexts/ThemeContext';
 
 const Home = () => {
@@ -30,24 +29,22 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <Particles />
       <div className={`home ${theme}`}>
         <section className="hero-section">
           <div className={`hero-content ${theme === 'dark' ? 'hero-dark' : 'hero-light'}`} ref={heroRef}>
             <div className="hero-text">
               <h1 className="hero-title">Hi, I'm <span className="name-highlight">Dhruv</span></h1>
-              <h2 className="hero-subtitle">Full Stack Developer</h2>
+              <h2 className="hero-subtitle">Software Engineer</h2>
               
               <div className="typewriter-container">
                 <p className="typewriter">
-                  I create <span className="highlight">modern</span>, <span className="highlight">scalable</span> & <span className="highlight">user-friendly</span> web applications
-                </p>
+"I build<span className="highlight">AI/ML</span>,<span className="highlight">next-gen</span>&<span className="highlight">effortlessly intuitive</span>apps."                </p>
               </div>
               
-              <p className="hero-description">
+              {/* <p className="hero-description">
                 Passionate about crafting exceptional digital experiences with clean code and innovative solutions. 
                 Specializing in React, Node.js, and modern web technologies.
-              </p>
+              </p> */}
               
               <div className="hero-btns">
                 <Link to="/projects" className="btn primary-btn">
@@ -68,7 +65,7 @@ const Home = () => {
             <div className="hero-image">
               <div className="profile-container">
                 <div className="profile-image">
-                  <img src="/images/coder-illustration.jpg" alt="Developer illustration" />
+                  <img src="/home.png" alt="Developer illustration" />
                 </div>
                 <div className="floating-elements">
                   <div className="floating-icon" style={{"--delay": "0s"}}>
@@ -94,12 +91,12 @@ const Home = () => {
         
         <section className="quick-stats">
           <div className="stats-container">
-            <div className="stat-item">
+            {/* <div className="stat-item">
               <div className="stat-number">2+</div>
               <div className="stat-label">Years Experience</div>
-            </div>
+            </div> */}
             <div className="stat-item">
-              <div className="stat-number">15+</div>
+              <div className="stat-number">10+</div>
               <div className="stat-label">Projects Completed</div>
             </div>
             <div className="stat-item">
@@ -108,7 +105,7 @@ const Home = () => {
             </div>
             <div className="stat-item">
               <div className="stat-number">100%</div>
-              <div className="stat-label">Client Satisfaction</div>
+              <div className="stat-label">Passion</div>
             </div>
           </div>
         </section>

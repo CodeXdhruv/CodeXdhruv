@@ -76,6 +76,18 @@ const Navbar = () => {
       <Link to="/" className="logo" onClick={closeMenu}>
       </Link>
       
+      {/* Mobile Controls Container */}
+      <div className="mobile-controls">
+        <div className={`mobile-menu-btn ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div className="theme-toggle-item">
+          <ThemeToggle />
+        </div>
+      </div>
+      
       <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
         <li>
           <Link 
@@ -118,11 +130,7 @@ const Navbar = () => {
         </li>
       </ul>
       
-      <div className={`mobile-menu-btn ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      {/* Original hamburger (hidden in mobile) */}
     </nav>
   );
 };

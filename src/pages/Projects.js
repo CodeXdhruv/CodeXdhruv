@@ -64,6 +64,18 @@ const Projects = () => {
       image: 'https://images.unsplash.com/photo-1593941707882-a5bac6861d75?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
       category: 'Frontend',
       status: 'Completed'
+    },
+    {
+      id: 6,
+      title: 'Kalpvraksha - AI-Powered Android Application',
+      tag: '06',
+      description: 'Kalpvraksha is a next-generation Android app that fuses AI-powered chatbot intelligence with seamless voice interactions, wrapped in a sleek Material Design interface and secured by Firebase Authentication. This cutting-edge mobile experience demonstrates mastery of artificial intelligence, voice technology, and modern Android development in one powerful, intuitive application.',
+      technologies: ['Android', 'Flutter', 'AI Integration', 'Natural Language Processing', 'Voice Services', 'Material Design', 'Firebase Authentication', 'Google Integration', 'Adaptive Theming'],
+      demoLink: 'https://github.com/CodeXdhruv/Kalpvraksha',
+      codeLink: 'https://github.com/CodeXdhruv/Kalpvraksha',
+      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+      category: 'Mobile App',
+      status: 'Ongoing'
     }
   ];
 
@@ -88,7 +100,7 @@ const Projects = () => {
         
         {/* Filter Buttons */}
         <div className="filter-buttons">
-          {['All', 'AI/ML', 'Mobile App', 'Full Stack', 'Frontend'].map((category) => (
+          {['All', 'AI/ML', 'Mobile App', 'Frontend'].map((category) => (
             <button
               key={category}
               className={`filter-btn ${activeFilter === category ? 'active' : ''}`}
@@ -106,21 +118,13 @@ const Projects = () => {
               className="project-card"
               ref={el => projectsRef.current[index] = el}
             >
-              <div className="project-image">
-                <img src={project.image} alt={project.title} />
-                <div className="project-overlay">
-                  <div className="project-status">
-                    <span className={`status-badge ${project.status.toLowerCase().replace(' ', '-')}`}>
-                      {project.status}
-                    </span>
-                  </div>
-                </div>
-              </div>
-              
               <div className="project-content">
                 <div className="project-header">
                   <span className="project-tag">{project.tag}</span>
                   <span className="project-category">{project.category}</span>
+                  <span className={`status-badge ${project.status.toLowerCase().replace(' ', '-')}`}>
+                    {project.status}
+                  </span>
                 </div>
                 
                 <h3 className="project-title">{project.title}</h3>
