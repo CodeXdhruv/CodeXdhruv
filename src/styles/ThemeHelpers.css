@@ -1,0 +1,218 @@
+/* Theme Helpers - Reusable CSS utility classes for theme integration */
+
+/* Global theme transition */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Force hardware acceleration for smoother animations */
+.home, .hero-content, .skill-item, .contact-form, .contact-card {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Text color classes */
+.text-theme-primary {
+  color: var(--primary-color);
+}
+
+.text-theme-secondary {
+  color: var(--secondary-color);
+}
+
+/* Background classes */
+.bg-theme-primary {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+
+.bg-theme-secondary {
+  background-color: var(--secondary-color);
+  color: var(--background-color);
+}
+
+/* Border classes */
+.border-theme-primary {
+  border-color: var(--primary-color);
+}
+
+.border-theme-secondary {
+  border-color: var(--secondary-color);
+}
+
+/* Hover effects */
+.hover-theme-primary:hover {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  transition: all 0.3s ease;
+}
+
+.hover-theme-secondary:hover {
+  background-color: var(--secondary-color);
+  color: var(--background-color);
+  transition: all 0.3s ease;
+}
+
+/* Theme-specific card styles */
+.card-theme {
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-theme:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Enhanced glassmorphism effect for cards */
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.dark .glassmorphism {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Theme-aware icons */
+.icon-theme {
+  color: var(--primary-color);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.icon-theme:hover {
+  color: var(--secondary-color);
+  transform: scale(1.1);
+}
+
+/* Section dividers with theme colors */
+.divider-theme {
+  height: 4px;
+  width: 60px;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  margin: 20px auto;
+  border-radius: 2px;
+}
+
+/* Theme-based gradient text */
+.gradient-text {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+/* Button styles with theme awareness */
+.btn-theme-outline {
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--text-color);
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-theme-outline:hover {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+
+.btn-theme-filled {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  border: 2px solid var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.btn-theme-filled:hover {
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+/* Responsive helpers */
+@media (max-width: 768px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+  
+  .mobile-full-width {
+    width: 100% !important;
+  }
+  
+  .mobile-center {
+    text-align: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* Improve mobile touch targets */
+@media (max-width: 480px) {
+  button, 
+  .btn,
+  a.btn,
+  input[type="submit"],
+  .nav-link,
+  .social-link {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Unified Section Title Styles */
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  position: relative;
+  color: var(--text-color);
+  display: inline-block;
+  width: 100%;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--primary-color);
+  border-radius: 2px;
+  box-shadow: 0 0 10px var(--primary-color);
+}
+
+/* Section Subtitle Styles */
+.section-subtitle {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+  color: var(--text-color);
+}
+
+.section-subtitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--primary-color);
+  border-radius: 2px;
+  box-shadow: 0 0 8px var(--primary-color);
+}

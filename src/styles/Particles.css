@@ -1,0 +1,44 @@
+.particles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particles-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s ease;
+}
+
+/* For interactive elements within the particles */
+.particles-container.interactive {
+  pointer-events: auto;
+}
+
+/* Theme-specific styling */
+.dark-theme .particles-canvas {
+  opacity: 0.9;
+  filter: blur(0px);
+}
+
+.light-theme .particles-canvas {
+  opacity: 0.6;
+  filter: blur(0.3px);
+}
+
+/* Added animation for particles during theme toggle */
+@keyframes particlePulse {
+  0% { opacity: 0.3; }
+  50% { opacity: 0.9; }
+  100% { opacity: 0.3; }
+}
+
+.theme-transition .particles-canvas {
+  animation: particlePulse 1.5s ease-in-out;
+}

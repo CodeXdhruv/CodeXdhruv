@@ -1,0 +1,640 @@
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', 'Roboto', sans-serif;
+}
+
+:root {
+  --primary-color: #2ecc71; /* Green theme */
+  --primary-dark: #27ae60;
+  --primary-light: #81c784;
+  --accent-color: #FF9800;
+  
+  /* Dark theme default */
+  --text-color: #fff;
+  --secondary-text-color: #cccccc;
+  --background-color: #000;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  --transition: all 0.3s ease;
+}
+
+/* Light theme variables */
+body.light-theme {
+  --text-color: #2c3e50;
+  --background-color: #f8f4e3; /* Warm ivory */
+  --card-bg: rgba(249, 247, 240, 0.95); /* Soft cream */
+  --shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  --border-color: rgba(26, 188, 156, 0.2);
+  --heading-color: #1a5276;
+  --accent-gradient: linear-gradient(135deg, #1abc9c, #3498db);
+}
+
+/* Light theme adjustments for various components */
+body.light-theme .service-card {
+  background: rgba(249, 247, 240, 0.95); /* Soft cream */
+  border: 1px solid rgba(26, 188, 156, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .service-icon {
+  background: linear-gradient(135deg, #1abc9c, #3498db);
+  color: white;
+  box-shadow: 0 6px 12px rgba(26, 188, 156, 0.2);
+}
+
+body.light-theme .testimonial-card {
+  background: rgba(249, 247, 240, 0.95); /* Soft cream */
+  border: 1px solid rgba(26, 188, 156, 0.2);
+}
+
+body.light-theme .skill-item {
+  background: rgba(249, 247, 240, 0.95); /* Soft cream */
+  border: 1px solid rgba(26, 188, 156, 0.2);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .skill-bar-container {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .skill-progress {
+  background: linear-gradient(90deg, #1abc9c, #3498db);
+}
+
+body.light-theme .navbar {
+  background: rgba(249, 247, 240, 0.95); /* Soft cream */
+  box-shadow: 0 4px 20px rgba(26, 188, 156, 0.12);
+  backdrop-filter: blur(10px);
+}
+
+body.light-theme .navbar.scrolled {
+  background: rgba(249, 247, 240, 0.98); /* Soft cream, more opaque */
+}
+
+body.light-theme .nav-links a {
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+body.light-theme .nav-links a:hover,
+body.light-theme .nav-links a.active {
+  color: #1abc9c;
+}
+
+body.light-theme .logo {
+  color: #1a5276;
+  font-weight: 700;
+}
+
+body.light-theme .section-title {
+  color: #1a5276;
+  position: relative;
+}
+
+body.light-theme .section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #1abc9c, #3498db);
+  border-radius: 2px;
+}
+
+body.light-theme .hero-content h1 {
+  background: linear-gradient(90deg, #1a5276, #1abc9c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 20px rgba(26, 188, 156, 0.15);
+}
+
+body.light-theme .hero-subtitle {
+  color: #34495e;
+  font-weight: 500;
+}
+
+body.light-theme .green-sparkle::after {
+  opacity: 0.5;
+}
+
+/* Button styles for light theme */
+body.light-theme .primary-btn {
+  background: linear-gradient(135deg, #1abc9c, #3498db);
+  color: white;
+  border: none;
+  box-shadow: 0 6px 15px rgba(26, 188, 156, 0.2);
+}
+
+body.light-theme .primary-btn:hover {
+  background: linear-gradient(135deg, #16a085, #2980b9);
+  box-shadow: 0 8px 20px rgba(26, 188, 156, 0.3);
+  transform: translateY(-3px);
+}
+
+body.light-theme .secondary-btn {
+  background: transparent;
+  color: #2c3e50;
+  border: 1px solid #1abc9c;
+}
+
+body.light-theme .secondary-btn:hover {
+  background: rgba(26, 188, 156, 0.1);
+  box-shadow: 0 5px 15px rgba(26, 188, 156, 0.2);
+  transform: translateY(-3px);
+}
+
+/* Adjustments for the mobile menu in light theme */
+body.light-theme .mobile-menu-btn span {
+  background-color: #2c3e50;
+}
+
+body.light-theme .mobile-menu {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  border-left: 1px solid rgba(26, 188, 156, 0.1);
+}
+
+/* Project card styles for light theme */
+body.light-theme .project-card {
+  background: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(26, 188, 156, 0.1);
+}
+
+body.light-theme .project-title {
+  color: #1a5276;
+}
+
+/* Ensure green elements remain visible in light theme */
+body.light-theme .primary-btn {
+  color: white;
+}
+
+/* Add decorative elements to light theme */
+body.light-theme .hero-light::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(135deg, rgba(26, 188, 156, 0.3), rgba(52, 152, 219, 0.3));
+  border-radius: 50%;
+  filter: blur(30px);
+  z-index: -1;
+}
+
+body.light-theme .hero-light::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 180px;
+  height: 180px;
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.3), rgba(26, 188, 156, 0.3));
+  border-radius: 50%;
+  filter: blur(30px);
+  z-index: -1;
+}
+
+body.light-theme .green-sparkle {
+  position: relative;
+}
+
+body.light-theme .green-sparkle::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(45deg, rgba(26, 188, 156, 0.05) 25%, transparent 25%, transparent 50%, rgba(26, 188, 156, 0.05) 50%, rgba(26, 188, 156, 0.05) 75%, transparent 75%, transparent);
+  background-size: 30px 30px;
+  opacity: 0.5;
+  z-index: -1;
+  border-radius: inherit;
+}
+
+/* Light theme location info styling */
+body.light-theme .location-info {
+  background: rgba(26, 188, 156, 0.1);
+  border: 1px solid rgba(26, 188, 156, 0.3);
+  color: #16a085;
+}
+
+body.light-theme .location-info p {
+  color: #16a085;
+}
+
+/* Light theme typewriter styling */
+body.light-theme .typewriter {
+  border-right: 2px solid #1abc9c;
+  color: #7f8c8d;
+}
+
+body.light-theme .typewriter .highlight {
+  color: #1abc9c;
+  font-weight: bold;
+}
+
+/* Light theme project tags */
+body.light-theme .project-tag {
+  background: rgba(26, 188, 156, 0.1);
+  color: #16a085;
+}
+
+body.light-theme .project-link {
+  background: linear-gradient(135deg, #1abc9c, #3498db);
+}
+
+body.light-theme .project-link:hover {
+  background: linear-gradient(135deg, #16a085, #2980b9);
+}
+
+/* Light theme background pattern */
+body.light-theme .gradient-background {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  position: relative;
+}
+
+body.light-theme .gradient-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(rgba(26, 188, 156, 0.05) 1px, transparent 1px),
+    radial-gradient(rgba(52, 152, 219, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+body.light-theme .gradient-nets {
+  background-image: 
+    linear-gradient(to right, rgba(26, 188, 156, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(26, 188, 156, 0.03) 1px, transparent 1px);
+}
+
+body {
+  overflow-x: hidden;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button, .btn {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.primary-btn {
+  background-color: var(--primary-color);
+  color: #000;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--primary-color);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+  color: var(--text-color);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 4px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .container {
+    width: 95%;
+    padding: 0 0.5rem;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px; /* Add padding for fixed navbar */
+  -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+}
+
+.App {
+  min-height: 100vh;
+  position: relative;
+  text-align: center;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  scroll-snap-type: y proximity; /* Add scroll snap for smoother section transitions */
+}
+
+/* Gradient Background */
+.gradient-background {
+  background: linear-gradient(to bottom, #000000, #051b11);
+  position: relative;
+}
+
+.gradient-nets {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh; /* Ensure it covers the full viewport height */
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(46, 204, 113, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(46, 204, 113, 0.05) 1px, transparent 1px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Green sparkle animation for specific elements */
+.green-sparkle {
+  position: relative;
+}
+
+.green-sparkle::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: 
+    radial-gradient(circle at 10% 10%, rgba(46, 204, 113, 0.3) 1px, transparent 1px),
+    radial-gradient(circle at 90% 90%, rgba(39, 174, 96, 0.2) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 1;
+  animation: floatSparkles 8s ease-in-out infinite;
+}
+
+@keyframes floatSparkles {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-5px) scale(1.05);
+    opacity: 0.7;
+  }
+}
+
+/* Green wave on hover */
+.hover-wave {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-wave::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  bottom: -10px;
+  left: 0;
+  background: linear-gradient(90deg, transparent, rgba(46, 204, 113, 0.5), transparent);
+  transition: all 0.4s ease;
+}
+
+.hover-wave:hover::before {
+  bottom: 0;
+  animation: greenWaveMove 2s linear infinite;
+}
+
+@keyframes greenWaveMove {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Green wave container */
+.green-wave-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.green-wave-container::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='rgba(46, 204, 113, 0.1)' fill-opacity='1' d='M0,224L48,213.3C96,203,192,181,288,176C384,171,480,181,576,197.3C672,213,768,235,864,229.3C960,224,1056,192,1152,176C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.green-wave-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='rgba(46, 204, 113, 0.05)' fill-opacity='1' d='M0,64L48,96C96,128,192,192,288,202.7C384,213,480,171,576,138.7C672,107,768,85,864,101.3C960,117,1056,171,1152,192C1248,213,1344,203,1392,197.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: floatWave 10s ease-in-out infinite;
+}
+
+@keyframes floatWave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Green sprinkles background effect */
+.green-sprinkles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(46, 204, 113, 0.2) 1px, transparent 1px),
+    radial-gradient(circle at 70% 20%, rgba(46, 204, 113, 0.15) 1px, transparent 1px),
+    radial-gradient(circle at 40% 80%, rgba(46, 204, 113, 0.1) 2px, transparent 2px),
+    radial-gradient(circle at 80% 50%, rgba(46, 204, 113, 0.12) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Button styles */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+/* Container for page content */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Section titles */
+.section-title {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 60px;
+  z-index: 2;
+}
+
+/* Additional styling for smooth page transitions */
+.page-transition-enter {
+  opacity: 0;
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+/* For Font Awesome icons */
+.fab, .fas {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #2ecc71;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
