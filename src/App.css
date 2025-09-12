@@ -24,6 +24,7 @@
 /* Light theme variables */
 body.light-theme {
   --text-color: #2c3e50;
+  --secondary-text-color: #34495e;
   --background-color: #f8f4e3; /* Warm ivory */
   --card-bg: rgba(249, 247, 240, 0.95); /* Soft cream */
   --shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
