@@ -389,9 +389,19 @@
     gap: 30px; /* Reduced gap */
     padding: 25px 20px; /* Reduced padding */
     text-align: center;
+    /* Reorder elements: image first, then text */
+    display: flex;
+    flex-direction: column;
   }
   
+  .hero-image {
+    order: 1; /* Image appears first */
+    margin-bottom: 20px;
+  }
+  
+  
   .hero-text {
+    order: 2; /* Text appears second */
     text-align: center;
   }
   
@@ -412,6 +422,7 @@
   .profile-container {
     width: 300px;
     height: 300px;
+    margin: 0 auto; /* Center the profile container */
   }
   
   .profile-image {
@@ -466,6 +477,18 @@
   .hero-content {
     padding: 20px 15px; /* Further reduced */
     gap: 20px;
+    /* Maintain flex layout for very small screens */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .hero-image {
+    order: 1; /* Image appears first */
+    margin-bottom: 15px;
+  }
+  
+  .hero-text {
+    order: 2; /* Text appears second */
   }
   
   .hero-title {
@@ -495,6 +518,7 @@
   .profile-container {
     width: 250px;
     height: 250px;
+    margin: 0 auto; /* Center the profile container */
   }
   
   .profile-image {
