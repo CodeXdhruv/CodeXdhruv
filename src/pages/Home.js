@@ -1,17 +1,4 @@
-// import React, { useEffect, useRef } from 'react';
-// import { Link } from 'react-router-dom';
-// import '../styles/Home.css';
-// import '../styles/ThemeHelpers.css';
-// import '../styles/Animations.css';
-// import { useTheme } from '../contexts/ThemeContext';
 
-// const Home = () => {
-//   const { theme } = useTheme();
-//   const heroRef = useRef(null);
-  
-//   useEffect(() => {
-//     const handleMouseMove = (e) => {
-//       if (!heroRef.current) return;
       
 //       // Reduced effect intensity for better usability
 //       const x = (window.innerWidth - e.pageX * 2) / 250;
@@ -99,10 +86,7 @@ import { Link } from 'react-router-dom';
 import '../styles/Home.css';
 import '../styles/ThemeHelpers.css';
 import '../styles/Animations.css';
-import { useTheme } from '../contexts/ThemeContext';
-
 const Home = () => {
-  const { theme } = useTheme();
   const heroRef = useRef(null);
   
   useEffect(() => {
@@ -125,9 +109,9 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <div className={`home ${theme}`}>
+      <div className="home dark">
         <section className="hero-section">
-          <div className={`hero-content ${theme === 'dark' ? 'hero-dark' : 'hero-light'}`} ref={heroRef}>
+          <div className="hero-content hero-dark" ref={heroRef}>
             <div className="hero-text">
               <h1 className="hero-title">
                 <span className="typewriter-text">Hi, I'm <span className="name-highlight">Dhruv</span></span>

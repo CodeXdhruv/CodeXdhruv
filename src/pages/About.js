@@ -30,7 +30,7 @@ const About = () => {
             <div className="image-frame"></div>
             <div className="bio-image-container">
               <img
-                src="/images/ChatGPT Image May 14, 2025, 07_18_12 PM.png"
+                src="/images/about.png"
                 alt="Programmer with headphones coding"
                 className="bio-image"
               />

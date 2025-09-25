@@ -1,9 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import '../styles/Particles.css';
-import { useTheme } from '../contexts/ThemeContext';
 
 const Particles = () => {
-  const { theme } = useTheme();
   const canvasRef = useRef(null);
   const particlesRef = useRef([]);
   const mouseRef = useRef({ x: null, y: null });
@@ -26,22 +24,11 @@ const Particles = () => {
     };
     
     const getParticleColor = () => {
-      // Enhanced theme-based color system
-      let baseColor;
+      // Dark theme color system
+      const greenVariation = Math.floor(Math.random() * 30);
+      const baseColor = [30 + greenVariation, 160 + greenVariation, 60 + greenVariation]; 
       
-      if (theme === 'dark') {
-        // Create varied green hues for dark theme
-        const greenVariation = Math.floor(Math.random() * 30);
-        baseColor = [30 + greenVariation, 160 + greenVariation, 60 + greenVariation]; 
-      } else {
-        // Softer green hues for light theme
-        const greenVariation = Math.floor(Math.random() * 30);
-        baseColor = [20 + greenVariation, 120 + greenVariation, 40 + greenVariation];
-      }
-      
-      const opacity = theme === 'dark'
-        ? Math.random() * 0.6 + 0.2 // Higher opacity for dark theme (0.2-0.8)
-        : Math.random() * 0.4 + 0.1; // Lower opacity for light theme (0.1-0.5)
+      const opacity = Math.random() * 0.6 + 0.2; // Dark theme opacity (0.2-0.8)
       
       return `rgba(${baseColor[0]}, ${baseColor[1]}, ${baseColor[2]}, ${opacity})`;
     };
@@ -122,11 +109,9 @@ const Particles = () => {
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(particles[j].x, particles[j].y);
             
-            // Theme-based connection colors
+            // Connection colors for dark theme
             const connectionOpacity = 0.2 - distance/500;
-            const connectionColor = theme === 'dark' 
-              ? `rgba(40, 167, 69, ${connectionOpacity})` // Brighter green for dark mode
-              : `rgba(20, 120, 40, ${connectionOpacity})`; // Darker green for light mode
+            const connectionColor = `rgba(40, 167, 69, ${connectionOpacity})`; // Brighter green for dark mode
               
             ctx.strokeStyle = connectionColor;
             ctx.lineWidth = 0.5;
@@ -147,16 +132,14 @@ const Particles = () => {
             
             // Enhanced mouse connection effect
             const mouseConnectionOpacity = 0.5 - distance/300;
-            const mouseConnectionColor = theme === 'dark'
-              ? `rgba(60, 200, 80, ${mouseConnectionOpacity})` // Bright green for dark theme
-              : `rgba(30, 150, 50, ${mouseConnectionOpacity})`; // Medium green for light theme
+            const mouseConnectionColor = `rgba(60, 200, 80, ${mouseConnectionOpacity})`; // Bright green for dark theme
               
             ctx.strokeStyle = mouseConnectionColor;
             ctx.lineWidth = 0.8;
             ctx.stroke();
             
-            // Attract particles to mouse with theme-based intensity
-            const attractionFactor = theme === 'dark' ? 0.015 : 0.01;
+            // Attract particles to mouse
+            const attractionFactor = 0.015;
             particle.x += dx * attractionFactor;
             particle.y += dy * attractionFactor;
           }
@@ -178,7 +161,7 @@ const Particles = () => {
       window.removeEventListener('mousemove', handleMouseMove);
       cancelAnimationFrame(animationFrameId);
     };
-  }, [theme]); // Add theme as dependency to re-render when theme changes
+  }, []);
   
   return (
     <canvas 

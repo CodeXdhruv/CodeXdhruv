@@ -208,12 +208,7 @@
   width: 40px;
 }
 
-.mobile-controls .theme-toggle-item {
-  margin: 0;
-  display: flex;
-  align-items: center;
-  height: 30px;
-}
+
 
 .mobile-menu-btn span {
   display: block;
@@ -225,11 +220,7 @@
   border-radius: 2px;
 }
 
-.theme-toggle-item {
-  margin-left: 10px;
-  display: flex;
-  align-items: center;
-}
+
 
 /* Mobile responsiveness */
 @media screen and (max-width: 768px) {
@@ -326,10 +317,7 @@
     display: none;
   }
 
-  .theme-toggle-item {
-    margin: 20px 0 0 0;
-    width: auto;
-  }
+
   
   .mobile-menu-btn.active span:nth-child(1) {
     transform: rotate(45deg) translate(6px, 6px);
