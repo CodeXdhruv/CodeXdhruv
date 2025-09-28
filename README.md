@@ -163,7 +163,7 @@ I'll describe a project, and you guess which tech stack I used!
   
   [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/CodeXdhruv)
   [![Email](https://img.shields.io/badge/Email-2ECC71?style=for-the-badge&logo=gmail&logoColor=white)](mailto:dhruvsen24@gmail.com)
-  [![Portfolio](https://img.shields.io/badge/Portfolio-2ECC71?style=for-the-badge&logo=google-chrome&logoColor=white)](https://codexdhruv.github.io)
+  [![Portfolio](https://img.shields.io/badge/Portfolio-2ECC71?style=for-the-badge&logo=google-chrome&logoColor=white)](https://codexdhruv.dev/)
   [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/dhruv-sen)
   
 </div>
